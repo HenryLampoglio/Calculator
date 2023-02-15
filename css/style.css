@@ -44,6 +44,10 @@ main h3{
     min-height: 30px;
 }
 
+.current-result{
+    font-weight: 600;
+}
+
 .calculator-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
