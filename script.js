@@ -5,7 +5,12 @@ const buttons = document.querySelectorAll(".calculator-container button")
 const addNumbers = (value) =>
 {
    currentResultText.innerText += value;
-   console.log(currentResultText)
+}
+
+const calculate = () =>{
+    let CalculatedResult = document.querySelector(".current-result").textContent;
+
+    console.log(eval(CalculatedResult));    
 }
 
 buttons.forEach((btn) =>
@@ -13,11 +18,13 @@ buttons.forEach((btn) =>
     btn.addEventListener("click", (e)=>
     {
         const value = e.target.innerText;
-        if(+value >= 0 ||value === ".")
+        if(+value >= 0 ||value === "+")
         {
            addNumbers(value)
-           console.log(`numero${value}`)
+        
         }
-        //else if(){}
+        else if(value === "="){
+            calculate()
+        }
     })
 })
