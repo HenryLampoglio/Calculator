@@ -9,8 +9,9 @@ const addNumbers = (value) =>
 
 const calculate = () =>{
     let CalculatedResult = document.querySelector(".current-result").textContent;
-
-    console.log(eval(CalculatedResult));    
+    previousResultText.innerText = CalculatedResult;    
+    
+    currentResultText.innerText = eval(CalculatedResult);;
 }
 
 buttons.forEach((btn) =>
@@ -18,7 +19,7 @@ buttons.forEach((btn) =>
     btn.addEventListener("click", (e)=>
     {
         const value = e.target.innerText;
-        if(+value >= 0 ||value === "+")
+        if(+value >= 0 ||value === "+" || value === "/" || value === "-" || value === "*" || value === "." )
         {
            addNumbers(value)
         
